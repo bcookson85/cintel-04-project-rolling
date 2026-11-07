@@ -37,6 +37,45 @@ The goal is to demonstrate how time-based analysis can provide additional insigh
 
 The project is configured in [pyproject.toml](pyproject.toml).
 
+### Technical Experiment: Rolling Window Size
+
+**Author:** Brian Cookson  
+**Date:** November 2026
+
+#### Objective
+
+Evaluate how increasing the rolling window size affects the calculation and interpretation of time-series monitoring signals.
+
+#### Modification
+
+In `src/cintel/rolling_monitor.py`, I changed the rolling window size from 3 to 5 observations.
+
+#### Prediction
+
+I predicted that increasing the window size would produce smoother rolling averages that respond more slowly to sudden changes in the underlying data. I also expected the first four observations to have incomplete rolling averages instead of the first two.
+
+#### Results
+
+The modified pipeline executed successfully and processed all 60 time-series records.
+
+The results confirmed that:
+
+- The original three-observation window produced its first rolling average on the third observation.
+- The modified five-observation window produced its first rolling average on the fifth observation.
+- The first calculated rolling request average changed from 135 to 150.
+- The first four observations contained blank rolling-average values because the window was not yet complete.
+- The resulting dataset was saved to `artifacts/rolling_metrics.csv`.
+
+#### Interpretation
+
+Increasing the rolling window size incorporates more historical observations into each calculation. This generally reduces the influence of individual fluctuations and produces a more stable monitoring signal.
+
+However, a larger window can also delay the detection of sudden changes because newer observations have less influence on the calculated average.
+
+#### Conclusion
+
+This experiment demonstrated that rolling window size is an important design decision in time-series analysis. Analysts must balance the need for stable signals against the ability to identify meaningful changes quickly.
+
 ## Data
 
 The example uses time-series system metrics from `data/`.

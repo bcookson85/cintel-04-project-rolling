@@ -119,13 +119,14 @@ def main() -> None:
     # A rolling window computes statistics over the most recent
     # N observations. The window "moves" forward one row at a time.
 
-    # Example: if WINDOW_SIZE = 3
-    # row 1 → mean of rows [1] = null, incomplete
-    # row 2 → mean of rows [1,2] = null, incomplete
-    # row 3 → mean of rows [1,2,3]
-    # row 4 → mean of rows [2,3,4]
+    # Example: if WINDOW_SIZE = 5
+    # row 1 -> mean = null, incomplete
+    # row 2 -> mean = null, incomplete
+    # row 3 -> mean = null, incomplete
+    # row 4 -> mean = null, incomplete
+    # row 5 -> mean of rows [1,2,3,4,5]
 
-    WINDOW_SIZE: int = 3
+    WINDOW_SIZE: int = 5
 
     LOG.info(f"WINDOW_SIZE: {WINDOW_SIZE}")
 
