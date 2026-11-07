@@ -37,6 +37,76 @@ The goal is to demonstrate how time-based analysis can provide additional insigh
 
 The project is configured in [pyproject.toml](pyproject.toml).
 
+### Custom Application: Project Response-Time Monitoring
+
+The proposed customization has been implemented using a synthetic
+dataset of 30 project requests recorded from October 1 through
+October 30, 2026.
+
+The application monitors two indicators:
+
+- **Rolling Average Response Time:** The average response time
+  across the five most recent project requests.
+- **Rolling Overdue Rate:** The percentage of the five most recent
+  requests that took more than seven days to receive a response.
+
+The data includes request identifiers, timestamps, project phases,
+and response times. It was created for educational purposes and
+does not represent actual employer or organizational data.
+
+#### Run the Custom Application
+
+From the project root directory, install the project dependencies:
+
+```powershell
+uv sync
+```
+
+Run the custom rolling monitoring pipeline:
+
+```powershell
+uv run python -m cintel.project_rolling
+```
+
+This processes `data/project_responses_timeseries.csv` and generates:
+
+`artifacts/project_rolling_metrics.csv`
+
+Generate the visualization:
+
+```powershell
+uv run python -m cintel.visualize_project
+```
+
+The visualization is saved to:
+
+`docs/images/project_rolling_chart.png`
+
+#### Custom Results
+
+The five-request rolling average increased to 9.6 days on
+October 18, while the rolling overdue rate reached 80%.
+
+By October 30, the rolling average had decreased to 3.6 days,
+and the rolling overdue rate had returned to 0%.
+
+These findings demonstrate how rolling monitoring can reveal
+a period of increasing project response delays followed by
+improvement.
+
+The dataset is synthetic, so the findings demonstrate the
+analytical approach rather than actual project performance.
+
+#### Custom Project Files
+
+- [Custom Dataset](data/project_responses_timeseries.csv)
+- [Monitoring Application](src/cintel/project_rolling.py)
+- [Project Utility Functions](src/cintel/utils_project.py)
+- [Visualization Code](src/cintel/visualize_project.py)
+- [Generated Results](artifacts/project_rolling_metrics.csv)
+- [Project Report](docs/index.md)
+- [Visualization](docs/images/project_rolling_chart.png)
+
 ### Technical Experiment: Rolling Window Size
 
 **Author:** Brian Cookson  
