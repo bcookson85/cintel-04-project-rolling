@@ -1,29 +1,41 @@
-# cintel-04-rolling-monitoring
+
+# cintel-04-project-rolling
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/cintel-04-rolling-monitoring/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/cintel-04-rolling-monitoring/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/cintel-04-rolling-monitoring/)
+[![CI](https://github.com/bcookson85/cintel-04-project-rolling/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/bcookson85/cintel-04-project-rolling/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://bcookson85.github.io/cintel-04-project-rolling/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-> Monitor time-series measurements using rolling statistics.
+> Exploring time series analysis and rolling window monitoring to identify trends and changes in project performance over time.
 
 ## Project Overview
 
-Author: Denise Case
+**Author:** Brian Cookson
 
-Date: 2026 October
+**Date:** November 2026
 
-This project introduces rolling monitoring.
+This project explores time series analysis and rolling window monitoring using Python and Polars as part of the Continuous Intelligence course at Northwest Missouri State University.
 
-The goal is to study measurements over time
-and use rolling statistics to reveal changes in system behavior.
+The initial objective is to understand and execute Dr. Denise Case's original rolling monitoring example, which analyzes time-ordered system measurements and uses rolling statistics to identify changes in system behavior.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+### Proposed Customization: Project Performance Monitoring
+
+My proposed customization will apply rolling window techniques to project request response times, building upon the project performance monitoring applications developed in previous modules.
+
+Using synthetic, timestamped project request data, the application will explore indicators such as:
+
+- **Rolling Average Response Time:** Monitor changes in average project request response times over successive observations.
+- **Rolling Overdue Rate:** Track the percentage of requests exceeding a predefined response-time threshold.
+- **Response-Time Trends:** Identify periods where project response times are increasing or decreasing.
+- **Project Performance Monitoring:** Explore how rolling statistics can reveal developing operational bottlenecks.
+
+The goal is to demonstrate how time-based analysis can provide additional insight into project performance and support more informed operational decisions.
+
+The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
@@ -104,7 +116,7 @@ uv run pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/cintel-04-rolling-monitoring/)
+The [hosted documentation site](https://bcookson85.github.io/cintel-04-project-rolling/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -117,8 +129,8 @@ This project includes continuous integration and continuous deployment (CI/CD)
 to check project files and publish the docs.
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/cintel-04-rolling-monitoring/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/cintel-04-rolling-monitoring/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/bcookson85/cintel-04-project-rolling/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/bcookson85/cintel-04-project-rolling/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
@@ -203,7 +215,7 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/cintel-04-rolling-monitoring/)
+- [Hosted Documentation](https://bcookson85.github.io/cintel-04-project-rolling/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
